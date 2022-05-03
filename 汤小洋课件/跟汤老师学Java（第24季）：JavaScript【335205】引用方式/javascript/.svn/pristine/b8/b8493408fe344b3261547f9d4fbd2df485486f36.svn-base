@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 定义正则表达式对象
+        // var reg=/a\s\d*\w/i;
+        // var reg=new RegExp('a','i');
+        // var reg=/\d?/;
+        // var reg=/^a\d?a[\dabc]{2}(\da){3}$/;
+        // var reg=/^(a|b)+$/;
+        var reg=/^[^abc]{2}$/;
+
+        console.log(reg.test('x4'));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //1.接收用户输入的整数，判断是否为5的倍数，并输出结果
+
+        //2.提示用户输入矩形的长和宽，输出面积和周长
+
+        //3.提示用户输入一个整数，如123456，倒序输出
+
+        //4.提示用户输入8个整数，判断并输出前三名（不允许使用数组）
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

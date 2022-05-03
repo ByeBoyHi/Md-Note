@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function f1() {
+            // console.log(location.href);
+            location.href='https://www.baidu.com';
+            // location.reload();
+        }
+        
+        function f2() {
+            history.back();
+        }
+
+        function f3() {
+            history.forward();
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="操作Location" onclick="f1()">
+    <input type="button" value="后退" onclick="f2()">
+    <input type="button" value="前进" onclick="f3()">
+</body>
+</html>

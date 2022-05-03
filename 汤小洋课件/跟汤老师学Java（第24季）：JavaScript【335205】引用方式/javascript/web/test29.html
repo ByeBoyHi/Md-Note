@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+         * window常用方法
+         */
+        // 1.alert()
+        // alert(111);
+
+        // 2.prompt()
+        // var name = prompt('请输入用户名：','无名氏');
+        // console.log(name);
+
+        // 3.confirm()
+        // var flag = confirm('确定要删除吗？');
+        // console.log(flag);
+
+        // 4.open()
+        function f1() {
+            open('test28.html','test28','width=500px,height=500px,resizable=no');
+        }
+
+        // 5.setTimeout()
+        var timer;
+        function f2() {
+            // setTimeout(show,2000); // 单位为毫秒
+            timer = setTimeout(function(){
+                console.log('BOOM....');
+            },3000);
+        }
+
+        function show(){
+            console.log('炸弹。。。。。');
+            setTimeout(show,2000);
+        }
+        
+        // 6.setInterval()
+        function f3() {
+            timer = setInterval(function () {
+                console.log('起床啦。。。。。');
+            },1000);
+        }
+        
+        // 7.clearTimeout()
+        function f4() {
+            clearTimeout(timer);
+        }
+        
+        // 8.clearInterval()
+        function f5() {
+            clearInterval(timer);
+        }
+
+        /*
+         * window常用事件
+         */
+        window.onscroll=function(){
+            console.log(111);
+        };
+        window.onclick=function(){
+            console.log(222);
+        };
+        window.onload=function(){
+            console.log(333);
+        };
+        window.onload=function(){
+            console.log(444);
+        };
+    </script>
+</head>
+<body>
+    <input type="button" value="打开一个新窗口" onclick="f1()"> <br>
+    <input type="button" value="一次性计时器" onclick="f2()"> <br>
+    <input type="button" value="周期性计时器" onclick="f3()"> <br>
+    <input type="button" value="关闭一次性计时器" onclick="f4()"> <br>
+    <input type="button" value="关闭周期性计时器" onclick="f5()"> <br>
+    <p style="background: #ccc; height: 2000px;">
+
+    </p>
+</body>
+</html>

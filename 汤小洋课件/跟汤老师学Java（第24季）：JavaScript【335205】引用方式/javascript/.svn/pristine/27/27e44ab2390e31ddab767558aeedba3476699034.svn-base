@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: pink;
+        }
+        p{
+            width: 100px;
+            height: 100px;
+            background: #ccc;
+        }
+    </style>
+    <script>
+        function f1(event){
+            // console.log(event);
+            // event.stopPropagation(); // 阻止事件冒泡，W3C标准方式
+            // event.cancelBubble=true;
+            // alert(111);
+        }
+        
+        window.onload=function(){
+            // 绑定鼠标右键点击事件
+            document.getElementById('btn').oncontextmenu=function(event){
+                event.preventDefault(); // 阻止默认行为
+                this.style.color='red';
+            };
+
+            document.getElementById('mya').onclick=function(event){
+                event.preventDefault();
+                this.innerHTML='新浪';
+            };
+        };
+    </script>
+</head>
+<body>
+    <div onclick="alert(333)">
+        <p onclick="alert(222)">
+            <input type="button" value="点    我" onclick="f1(event)" id="btn">
+        </p>
+    </div>
+
+    <a href="#" id="mya">百度</a>
+</body>
+</html>

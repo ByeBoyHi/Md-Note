@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            document.getElementById('myimg').onclick=function () {
+                alert('胆子挺肥！');
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>水平线标签的使用</h3>
+
+    <div style="width: 300px;height: 100px;background: #ccc;">
+        <hr color="#000" size="5px" width="50%" align="right">
+    </div>
+
+    <img src="images/bg.gif" alt="这是一只可爱的小阿狸" title="你敢点我试试" id="myimg" height="200px">
+
+
+</body>
+</html>

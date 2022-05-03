@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #container {
+            text-align: center;
+        }
+
+        #mytable {
+            width: 500px;
+            text-align: center;
+            border: 1px solid #ccc;
+            margin: 0 auto;
+        }
+
+        #mytable td, #mytable th {
+            border: 1px solid #ccc;
+        }
+
+        #mytable tfoot tr {
+            text-align: right;
+        }
+
+        #myfrm {
+            line-height: 30px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            // 为添加按钮绑定事件
+            $('btnAdd').onclick = function () {
+                // 创建tr
+                var tr = document.createElement('tr');
+                // 创建td
+                var tdName = document.createElement('td');
+                var tdAge = document.createElement('td');
+                var tdSex = document.createElement('td');
+                var tdPhone = document.createElement('td');
+                var tdDelete = document.createElement('td');
+                //将数据添加到td中
+                tdName.innerHTML=$('name').value;
+                tdAge.innerHTML=$('age').value;
+                tdSex.innerHTML=$('m').checked?$('m').value:$('f').value;
+                tdPhone.innerHTML=$('phone').value;
+                //创建input按钮
+                var btnDelete = document.createElement('input');
+                btnDelete.type='button';
+                btnDelete.value='删除';
+                btnDelete.onclick=function(){
+                    this.parentNode.parentNode.remove();
+                };
+                tdDelete.appendChild(btnDelete);
+
+                // 将td添加到tr中
+                tr.appendChild(tdName);
+                tr.appendChild(tdAge);
+                tr.appendChild(tdSex);
+                tr.appendChild(tdPhone);
+                tr.appendChild(tdDelete);
+                // 将tr添加到tbody中
+                $('tb').appendChild(tr);
+            };
+
+            // 为删除按钮绑定事件
+            var btnDelete=document.querySelectorAll('.delete');
+            for (var i=0;i<btnDelete.length;i++){
+                btnDelete[i].onclick=function(){
+                    this.parentNode.parentNode.remove();
+                };
+            }
+
+            // 为首行删除按钮绑定事件
+            $('btnDeleteFirst').onclick=function(){
+                $('tb').getElementsByTagName('tr')[0].remove();
+            };
+
+            // 为末行删除按钮绑定事件
+            $('btnDeleteLast').onclick=function(){
+                var trs = $('tb').getElementsByTagName('tr');
+                trs[trs.length-1].remove();
+            };
+        };
+
+        function $(id) {
+            return document.getElementById(id);
+        }
+    </script>
+</head>
+<body>
+<div id="container">
+    <table id="mytable">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>电话</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody id="tb">
+            <tr>
+                <td>tom</td>
+                <td>20</td>
+                <td>male</td>
+                <td>110</td>
+                <td><input type="button" value="删除" class="delete"></td>
+            </tr>
+            <tr>
+                <td>jack</td>
+                <td>22</td>
+                <td>male</td>
+                <td>119</td>
+                <td><input type="button" value="删除" class="delete"></td>
+            </tr>
+            <tr>
+                <td>alice</td>
+                <td>25</td>
+                <td>female</td>
+                <td>120</td>
+                <td><input type="button" value="删除" class="delete"></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5">
+                    <input type="button" value="从首行删除" id="btnDeleteFirst">
+                    <input type="button" value="从末行删除" id="btnDeleteLast">
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    <hr>
+
+    <form action="" id="myfrm">
+        姓名：<input type="text" id="name"> <br>
+        年龄：<input type="text" id="age"> <br>
+        性别：<input type="radio" name="sex" id="m" value="male" checked> 男
+        <input type="radio" name="sex" id="f" value="female"> 女 <br>
+        电话：<input type="text" id="phone"> <br>
+        <input type="button" value="添    加" id="btnAdd">
+        <input type="reset" value="重    置">
+    </form>
+</div>
+</body>
+</html>

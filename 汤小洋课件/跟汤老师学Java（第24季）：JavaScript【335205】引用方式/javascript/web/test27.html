@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function getDegree(){
+            var degree = document.getElementById('degree');
+            // console.log(degree.length);
+            // console.log(degree.selectedIndex);
+            var opts = degree.options;
+            // console.log(opts);
+            // var opt = opts[degree.selectedIndex];
+            // console.log(opt.text,opt.value);
+
+            // opts[1].text='中专';
+            // opts[1].value='zhongzhuan';
+
+
+            // var option = document.createElement('option');
+            // option.innerText='博士';
+            // option.value='boshi';
+            // degree.appendChild(option);
+
+            // opts[opts.length]=new Option('博士','boshi');
+
+            // var option = new Option('博士','boshi');
+            // degree.add(option);
+
+            var option=new Option('中专','zhongzhuan');
+            degree.add(option,degree.getElementsByTagName('option')[1]);
+        }
+        
+        window.onload=function () {
+          document.getElementById('degree').onchange=function(){
+              // console.log(111);
+              // console.log(this.options[this.selectedIndex].value);
+              console.log(this.value);
+          };
+        };
+    </script>
+</head>
+<body>
+    <input type="button" value="操作下拉列表" onclick="getDegree()">
+    <hr>
+    学历：
+    <select id="degree">
+        <option value="0">--请选择学历--</option>
+        <option value="gaozhong">高中</option>
+        <option value="dazhuan">大专</option>
+        <option value="benke">本科</option>
+        <option value="yanjiusheng">研究生</option>
+    </select>
+</body>
+</html>

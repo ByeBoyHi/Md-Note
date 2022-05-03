@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var r = 0, l = 0;
+        var timer;
+        function doStart() {
+            $('start').disabled = true;
+            $('stop').disabled = false;
+            timer=setInterval(function(){
+                r++;
+                if(r>9){
+                    r=0;
+                    l++;
+                }
+                if(l>9){
+                    r=0;
+                    l=0;
+                }
+                $('imgr').src='images/number/'+r+'.bmp';
+                $('imgl').src='images/number/'+l+'.bmp';
+            },100);
+        }
+
+        function doStop() {
+            $('stop').disabled = true;
+            $('start').disabled = false;
+            clearInterval(timer);
+        }
+
+        function $(id) {
+            return document.getElementById(id);
+        }
+    </script>
+</head>
+<body>
+<table>
+    <tr>
+        <td><img src="images/number/0.bmp" id="imgl"></td>
+        <td><img src="images/number/0.bmp" id="imgr"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="开始" id="start" onclick="doStart()"></td>
+        <td><input type="button" value="停止" id="stop" onclick="doStop()" disabled></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>用户注册</h2>
+    <form action="" method="get" enctype="">
+        用户名：<input type="text" name="username" value="" placeholder="请输入用户名"> <br>
+        手机号：<input type="text" name="phone" size="10px" maxlength="11"> <br>
+        密码：<input type="password" name="password"> <br>
+        性别：<input type="radio" name="sex" value="male" checked> 男
+              <input type="radio" name="sex" value="femal"> 女 <br>
+        婚否：<input type="radio" name="marry" value="married"> 已婚
+              <input type="radio" name="marry" value="single" checked> 未婚 <br>
+        爱好：<input type="checkbox" name="hobby" value="eat" checked> 吃饭
+              <input type="checkbox" name="hobby" value="sleept"> 睡觉
+              <input type="checkbox" name="hobby" value="doudou"> 打豆豆 <br>
+        头像：<input type="file" name="header" accept="image/*"> <br>
+            <input type="hidden" name="id" value="9527">
+        学历：<select name="degree">
+                <option value="0">--请选择学历--</option>
+                <option value="dazhuan" selected>大专</option>
+                <option value="benke">本科</option>
+                <option value="yanjiusheng">研究生</option>
+                <option value="bosheng">博士</option>
+              </select> <br>
+        简介：<textarea name="introduce" rows="10" cols="25"></textarea> <br>
+
+        <input type="submit" value="注    册">
+        <input type="reset" value="重    置">
+        <input type="image" src="images/submit.gif">
+        <input type="button" value="普通按钮">
+    </form>
+</body>
+</html>

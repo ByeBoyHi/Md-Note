@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>HTML：Hyper Text Markup Language超文本标签(标记)语言</p>
+    <p>由各种标签组成，用来制作网页，告诉浏览器该如何显示页面</p>
+
+    <h2>Java</h2>
+    <h3>Web</h3>
+    <h5>Android</h5>
+    <h6>IOS</h6>
+
+    iPhone XR不要9998元，也不要1888，只要<span style="color:red;font-size: 30px;">198</span>元！
+    <hr>
+
+    <h2>期末考试前三名</h2>
+    <ol>
+        <li>唐伯虎</li>
+        <li>秋香</li>
+        <li>石榴姐</li>
+    </ol>
+
+    <h2>可爱的同学们</h2>
+    <ul>
+        <li>张三</li>
+        <li>李四</li>
+        <li>王五</li>
+    </ul>
+
+</body>
+</html>

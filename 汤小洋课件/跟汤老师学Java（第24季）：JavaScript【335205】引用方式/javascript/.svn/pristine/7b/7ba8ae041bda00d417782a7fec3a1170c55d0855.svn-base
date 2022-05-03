@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function f1() {
+            console.log(11111);
+
+        }
+
+        // 当页面加载完成后执行
+        window.onload=function(){
+            // 为按钮绑定回调函数
+            document.getElementById('btn2').onclick=function(event){
+                console.log(2222);
+                console.log(event);
+                console.log(event.srcElement);
+                console.log(this); // this表示事件源
+            };
+
+            // 为复选框绑定事件
+            var hobbies = document.getElementsByName('hobby');
+            for(var i=0;i<hobbies.length;i++){
+                hobbies[i].onclick=function(){
+                    // console.log(i);
+                    // console.log(hobbies[i].value);
+                    console.log(this.value);
+                };
+            }
+        };
+
+
+
+    </script>
+</head>
+<body>
+    <!--方式1：静态绑定-->
+    <input type="button" value="按钮1" onclick="f1()">
+
+    <!--方式2：动态绑定-->
+    <input type="button" value="按钮2" id="btn2">
+
+    爱好：<input type="checkbox" name="hobby" value="eat"> 吃饭
+         <input type="checkbox" name="hobby" value="sleep"> 睡觉
+         <input type="checkbox" name="hobby" value="doudou"> 打豆豆
+</body>
+</html>

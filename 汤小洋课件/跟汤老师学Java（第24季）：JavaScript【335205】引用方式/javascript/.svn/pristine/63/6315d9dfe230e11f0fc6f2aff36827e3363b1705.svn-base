@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+         * 箭头函数，语法： 参数 => 返回值
+         */
+        // 示例1
+        // var a = function(x){
+        //     return x*2;
+        // }
+
+        // var a = x => x*2; // 更简洁
+
+        // 示例2：如果箭头函数没有参数或有2个以上参数，则必须使用小括号表示参数部分
+        // var a = function(x,y){
+        //     return 5;
+        // }
+        // var a = (x, y) => 5;
+
+        // 示例3：如果箭头函数的函数体多于一条语句，则必须使用大括号将它们括起来
+        // var a = function (x, y) {
+        //     var sum = x + y;
+        //     return sum
+        // }
+        // var a = (x,y) => {
+        //     var sum = x + y;
+        //     return sum;
+        // }
+
+        var arr = [12,4,23,6,2,86];
+        arr.forEach((value,index) => {
+            console.log(index,value*2);
+        });
+
+        window.onclick=() => {
+            console.log(1111);
+        };
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

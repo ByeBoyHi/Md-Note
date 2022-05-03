@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+         * while
+         */
+        // var i = 1;
+        // var sum = 0;
+        // while (i <= 100) {
+        //     if (i % 7 != 0) {
+        //         sum += i;
+        //     }
+        //     i++;
+        // }
+        // console.log(sum);
+
+        /*
+         * do...while
+         */
+        // var i = 1;
+        // var sum = 0;
+        // do {
+        //     if (i % 7 != 0) {
+        //         sum += i;
+        //     }
+        //     i++;
+        // }while(i<=100);
+        // console.log(sum);
+
+        /*
+         * for
+         */
+        // var sum=0;
+        // for(var i=1;i<=100;i++){
+        //     if(i%7!=0){
+        //         sum+=i;
+        //     }
+        // }
+        // console.log(sum);
+
+        /*
+         * for...in 对集合进行遍历（迭代）
+         */
+        var str='welcome'; // 可以将字符串看作是由多个字符组成的集合
+        for(var index in str){
+            // console.log(index); // index表示集合中元素的索引，并不是元素本身
+            console.log(str[index]);
+        }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

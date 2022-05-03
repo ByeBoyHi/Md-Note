@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function f1(){
+            console.log(111);
+        }
+
+        // f1();
+
+        // 点击页面时执行函数f1
+        // window.onclick=f1; // 回调函数，即回头调用此函数，不能加小括号
+
+        /*
+         * 函数本身也是一种数据类型
+         * 数据类型：string、number、boolean、null、undefined、object、function
+         */
+        // console.log(typeof f1);
+        // var a = f1;
+        // a();
+        // console.log(typeof a);
+
+        /*
+         * 将一个函数作为另一个函数的参数
+         */
+        function f2(x,y){ //
+            // console.log(x);
+            // console.log(y);
+            y(); // 调用传入的函数
+        }
+
+        // f2(5,f1); // 将函数f1作为参数传给函数f2
+
+
+        /*
+         * 示例
+         */
+        var arr = [12,4,23,6,2,86];
+
+        /*
+         * 定义一个比较器，其实就是一个包含比较规则的函数
+         * 升序：如果第一个参数比第二个参数大，则返回正数
+         *       如果第一个参数比第二个参数大，则返回负数
+         *       如果两个参数相等，则返回0
+         */
+        function compareFn(a,b){
+            return b-a;
+        }
+
+        // arr.sort(compareFn); // 将自定义的比较规则函数作为参数传入
+        // console.log(arr);
+
+        function show(value,index){
+            console.log(index,value);
+        }
+
+        arr.forEach(show);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

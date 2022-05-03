@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 使用Math对象进行数学运算，用法：Math.方法名(参数)
+
+        // 1.绝对值
+        console.log(Math.abs(-5));
+
+        // 2.计算次方
+        console.log(Math.pow(2, 4));
+
+        // 3.四舍五入
+        console.log(Math.round(3.5));
+
+        // 4.向上取整、向下取整
+        console.log(Math.ceil(3.5)); // 获取大于等于参数的最小整数
+        console.log(Math.floor(3.5)); // 获取小于等于参数的最大整数
+
+        // 5.生成一个[0.0,1)之间的随机浮点数
+        console.log(Math.random());
+
+        // 6.最大值、最小值
+        console.log(Math.max(23, 1, 54, 2, -6));
+        console.log(Math.min(23, 1, 54, 2, -6));
+
+        // 7.圆周率的值
+        console.log(Math.PI);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

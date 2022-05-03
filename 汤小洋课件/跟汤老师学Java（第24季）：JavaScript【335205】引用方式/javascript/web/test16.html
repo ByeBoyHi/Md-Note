@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var date = new Date();
+        // var date = new Date(2019,2,14,12,30,25); // 月份取值为[0,11]
+        // var date = new Date(122342342342);
+
+        console.log(date);
+
+        var year = date.getFullYear();
+        var month = date.getMonth()+1;
+        var d = date.getDate();
+        var hour = date.getHours();
+        var minute = date.getMinutes();
+        var second = date.getSeconds();
+        let milliseconds = date.getMilliseconds();
+        let day = date.getDay();
+        var weekday=['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+        let time = date.getTime();
+        // console.log(time);
+
+        var currentTime = year+'年'+checkDate(month)+'月'+checkDate(d)+'日 '+checkDate(hour)+':'+checkDate(minute)+':'+checkDate(second)+' '+weekday[day];
+
+        document.write(currentTime)
+
+        function checkDate(num){
+            if(num<=9){
+                return '0'+num;
+            }
+            return num;
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

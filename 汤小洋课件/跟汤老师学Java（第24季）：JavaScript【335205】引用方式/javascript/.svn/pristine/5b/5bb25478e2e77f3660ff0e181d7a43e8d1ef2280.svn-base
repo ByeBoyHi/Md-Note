@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <scritp>
+        // 1.产生一个[1,99]之间的随机数，猜数字
+
+        // 2.提示用户输入10个数字，放到数组中，然后找出数组中的偶数，放到一个新数组中
+
+        // 3.在页面中显示实时的时间 setInterval
+    </scritp>
+</head>
+<body>
+
+</body>
+</html>

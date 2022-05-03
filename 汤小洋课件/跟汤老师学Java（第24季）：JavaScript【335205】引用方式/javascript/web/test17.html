@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // 定义一个JSON对象
+        var user={
+            "id":1001,
+            "name":"tom",
+            "age":20,
+            "height":180.5,
+            "address":{
+                "province":"江苏省",
+                "city":"南京市",
+                "district":"秦淮区"
+            },
+            "isMarried":true
+        };
+
+        // 访问方式：对象名.属性名
+        // console.log(user.name);
+        // console.log(user.height);
+        // console.log(user.address.city);
+
+        // JSON对象数组
+        var users=[
+            {
+                "id":9527,
+                "username":"admin",
+                "password":"123",
+                "status":1
+            },{
+                "id":9528,
+                "username":"tom",
+                "password":"111",
+                "status":1
+            },{
+                "id":9529,
+                "username":"jack",
+                "password":"222",
+                "status":0
+            },{
+                "id":9530,
+                "username":"alice",
+                "password":"333",
+                "status":1
+            }
+        ];
+
+        // for(var i=0;i<users.length;i++){
+        //     var u = users[i];
+        //     console.log(u.id,u.username,u.password,u.status);
+        // }
+
+        /*
+         * JSON对象和字符串之间的转换
+         */
+        // 1.将JSON对象转换为字符串
+        /*console.log(typeof user);
+        console.log(user);
+
+        var str = JSON.stringify(user);
+        console.log(typeof str);
+        console.log(str);*/
+
+        // 2.将字符串转换为JSON对象
+        var str='{"name":"zhangsan","age":18,"sex":"男"}';
+        var obj = JSON.parse(str);
+        console.log(typeof obj);
+        console.log(obj);
+        console.log(obj.age);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

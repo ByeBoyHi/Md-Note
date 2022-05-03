@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+         * 自定义函数
+         */
+        // 1.定义函数
+        function show(){
+            console.log('嘿嘿');
+        }
+
+        function calc(num1,num2,num3){
+            // console.log(num1,num2,num3);
+            var sum=num1+num2+num3;
+            console.log(sum);
+            // return sum;
+        }
+
+        // 2.调用函数
+        // show();
+        // var result = calc(12,6,2)
+        // console.log(result);
+
+
+        /*
+         *  变量的作用域
+         */
+        var c = 6; // 全局变量
+
+        function fn(){
+            if(true){
+                var a = 5; // 局部变量
+                let y = 9;
+            }
+            // console.log(y);
+            console.log(a);
+            console.log(c);
+
+        }
+
+        {
+            var d = 2; // 全局变量
+            let x = 4;
+            console.log(x);
+        }
+
+        console.log(a);
+        console.log(c);
+
+        // var b;
+        // console.log(b);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

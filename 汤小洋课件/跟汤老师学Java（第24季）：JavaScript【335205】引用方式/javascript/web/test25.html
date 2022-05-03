@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #username{
+            outline: none;
+        }
+        .border{
+            border: 1px solid red;
+        }
+        #img{
+            width: 160px;
+            height: 160px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            /*
+             * 鼠标事件
+             */
+            // document.getElementById('btn').onclick=function () {
+            // document.getElementById('btn').ondblclick=function () {
+            // document.getElementById('btn').onmouseover=function () {
+            // document.getElementById('btn').onmousedown=function () {
+            //     console.log(111);
+            // };
+            // document.getElementById('btn').onmouseout=function () {
+            // document.getElementById('btn').onmouseup=function () {
+            // document.getElementById('btn').onmousemove=function () {
+            //     console.log(222);
+            // };
+
+            /*
+             * 键盘事件
+             */
+            // document.getElementById('username').onkeydown=function(){
+            //     console.log(111);
+            // };
+            // document.getElementById('username').onkeyup=function(){
+            // document.getElementById('username').onkeypress=function(event){
+            //     console.log(event);
+            // };
+
+            /*
+             * 表单事件
+             */
+            // document.getElementById('username').onfocus=function(event){
+            //     this.className='border';
+            // };
+            // document.getElementById('username').onblur=function(event){
+            // document.getElementById('username').onselect=function(event){
+            //     // this.className='';
+            //     console.log(111);
+            // };
+
+            // document.getElementById('head').onchange=function(){
+            //     document.getElementById('img').src=window.URL.createObjectURL(this.files[0]);
+            // };
+
+            document.getElementById('frm').onsubmit=function () {
+                console.log(111);
+                return false; // 返回false，阻止表单提交
+            };
+        };
+    </script>
+</head>
+<body>
+    <form action="" id="frm">
+        <input type="button" value="点    我" id="btn"> <br>
+        用户名：<input type="text" id="username" name="username"> <br>
+        <img src="" id="img"> <br>
+        头像：<input type="file" id="head" multiple> <br>
+        <input type="submit" value="提    交">
+    </form>
+</body>
+</html>

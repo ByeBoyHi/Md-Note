@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+         * 算术运算符
+         */
+        var a = 5;
+        var b = '3';
+        var c = '2';
+        var d = true;
+        // console.log(a + b);
+        // console.log(a - b);
+        // console.log(a * b);
+        // console.log(a / b);
+        // console.log(a % b);
+        // console.log(a ** b); // a的b次方
+        // console.log(a-c); // 会自动将字符串c转换为数值
+        // console.log(a++); // 前缀自增自减和后缀自增自减，同Java
+        // console.log(++a);
+        // console.log(a--);
+
+        /*
+         * 比较运算符
+         */
+        // console.log(a>b);
+        // console.log(a<b);
+        // console.log(a>=b);
+        // console.log(a<=b);
+        // console.log(a==b); // 等于，只判断内容是否相等
+        // console.log(a===b); // 全等于，既要判断内容，也要判断数据类型
+        // console.log(a!=b);
+        // console.log(a==d); // true对应的是1，false对应的是0
+
+        /*
+         * 赋值运算符
+         */
+        // a = 8;
+        // a += 2;
+        // a -= 2;
+        // console.log(a);
+
+        /*
+         * 逻辑运算符
+         */
+        // var x = true;
+        // var y = false;
+        // console.log(x && y);
+        // console.log(x || y);
+        // console.log(!x);
+        // console.log( a || 6/0);
+
+        /*
+         * 条件运算符
+         */
+        console.log(a < b ? a + b : a - b);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

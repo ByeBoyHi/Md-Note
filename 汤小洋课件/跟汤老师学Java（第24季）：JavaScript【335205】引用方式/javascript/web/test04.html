@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+         * 数据类型
+         */
+        var name='tom';
+        var age=18;
+        var height=180.5;
+        var flag=false;
+        var hobby=null; //null
+        var date=new Date();
+        var arr=new Array();
+        var sex;// undefined
+
+        // console.log(typeof name);
+        // console.log(typeof age);
+        // console.log(typeof height);
+        // console.log('hello'-5); // 返回 NaN
+        // console.log(typeof NaN);
+        // console.log(typeof flag);
+        // console.log(typeof hobby);// 如果数据是null、Date、Array等，返回的都是object
+        // console.log(typeof date);
+        // console.log(typeof arr);
+        // console.log(sex);
+        // console.log(typeof sex);
+
+        /*
+         * 类型转换
+         */
+        // 1.转换为number
+        var a = '12';
+        // console.log(typeof a);
+
+        // 方式一：使用Number()
+        // a = Number('12');
+        // a = Number('12.5');
+        // a = Number('12abc'); // 返回NaN
+        // a = Number('abc12');
+
+        // 方式二：使用parseInt()
+        // a = parseInt('12');
+        // a = parseInt('12.5');
+        // a = parseInt('12abc'); // 按字符顺序进行解析
+        // a = parseInt('abc12');
+
+        // 方式三：使用parseFloat()
+        // a = parseFloat('12');
+        // a = parseFloat('12.5');
+        // a = parseFloat('12.5abc'); // 按字符顺序进行解析
+        // a = parseFloat('abc12');
+
+        // a = Number(false); // boolean在内存中使用数字表示的，true为1，false为0
+
+        // console.log(a,typeof a);
+
+        /*
+         * 转换为字符串
+         */
+        // var a = 12;
+        // var a = true;
+        // a= a+'';
+        // console.log(typeof a);
+
+        /*
+         * 转换为布尔
+         */
+        // var a = Boolean(0);
+        // var a = Boolean('');
+        // var a = Boolean(null);
+        // var a = Boolean(undefined);
+        // var a = Boolean(NaN);
+        // var a = Boolean(4);
+        // var a = Boolean('tom');
+
+        var name='tom';
+        if(name){
+            console.log(11);
+        }
+
+        // console.log(a,typeof a);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

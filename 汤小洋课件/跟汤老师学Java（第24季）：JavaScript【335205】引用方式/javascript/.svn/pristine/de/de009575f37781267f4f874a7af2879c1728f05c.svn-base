@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS的引用方式</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background: #ccc;
+        }
+    </style>
+    <!--1.内联方式-->
+    <script>
+        alert("Hello JavaScript"); // 弹出一个窗口
+    </script>
+    <!--3.引用外部的js文件-->
+    <script src="js/hello.js"></script>
+</head>
+<body>
+    第一个JavaScript程序 <br>
+
+    <!--2.行内方式-->
+    <input type="button" value="点我" onclick="alert('我被点了，晕了！')">
+
+    <div onmouseover="alert('走开！')">把鼠标移上来！</div>
+
+    <a href="javascript:alert('超链接被触发')">我是超链接</a>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table tr td:first-child {
+            text-align: right;
+        }
+
+        .error {
+            font-size: 12px;
+            color: red;
+        }
+
+        .ok {
+            color: green;
+        }
+    </style>
+    <script>
+        function checkUsername() {
+            // 用户名只能由数字、字母、下划线、横线、中文组成，且只能以数字或字母开头和结尾，长度范围为[6,14]
+            var username = $('username').value;
+            var reg = /^[\da-z][\u4E00-\u9FA5\w-]{4,12}[\da-z]$/i;
+            if (!reg.test(username)) {
+                $('usernameInfo').innerText = '用户名只能由数字、字母、下划线、横线、中文组成，长度范围为[6,14]';
+                $('usernameInfo').className = 'error';
+                return false;
+            }
+            $('usernameInfo').innerText = 'ok';
+            $('usernameInfo').className = 'ok';
+            return true;
+        }
+
+        function checkPassword() {
+            // 密码只能由数字、字母组成，长度为6-10位
+            var password = $('password').value;
+            var reg = /^[\da-z]{6,10}$/;
+            if (!reg.test(password)) {
+                $('passwordInfo').innerText = '密码只能由数字、字母组成，长度为6-10位';
+                $('passwordInfo').className = 'error';
+                return false;
+            }
+            $('passwordInfo').innerText = 'ok';
+            $('passwordInfo').className = 'ok';
+            return true;
+        }
+
+        function checkRepassword() {
+            // 两次输入的密码必须相同
+            var password = $('password').value;
+            var repassword = $('repassword').value;
+            if(repassword!=password){
+                $('repasswordInfo').innerText='两次输入的密码不一致';
+                $('repasswordInfo').className='error';
+                return false;
+            }
+            $('repasswordInfo').innerText='ok';
+            $('repasswordInfo').className='ok';
+            return true;
+        }
+        
+        function checkBirthday() {
+            var reg=/^\d{4}-\d{1,2}-\d{1,2}$/;
+        }
+        
+        function checkPhone() {
+            var reg=/^1\d{10}$/;
+        }
+        
+        function checkEmail() {
+            // tom@baidu.com   tom@sina.com.cn
+            var reg=/^\w+@\w+(\.[a-z]{2,3}){1,2}$/;
+
+            var reg=/[1-9]\d{14}(\d{2}[\dX])?/i;
+        }
+        
+        function checkInput() {
+            return checkUsername() && checkPassword() && checkRepassword();
+        }
+
+        function $(id) {
+            return document.getElementById(id);
+        }
+    </script>
+</head>
+<body>
+<h2>用户注册</h2>
+<form action="success.html" method="get" onsubmit="return checkInput()">
+    <table>
+        <tr>
+            <td>用户名：</td>
+            <td>
+                <input type="text" name="username" id="username" placeholder="请输入用户名" onblur="checkUsername()">
+                <span id="usernameInfo"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>密码：</td>
+            <td>
+                <input type="password" name="password" id="password" placeholder="请输入密码" onblur="checkPassword()">
+                <span id="passwordInfo"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>确认密码：</td>
+            <td>
+                <input type="password" name="repassword" id="repassword" placeholder="请再次输入密码"
+                       onblur="checkRepassword()">
+                <span id="repasswordInfo"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>出生日期：</td>
+            <td>
+                <input type="text" name="birthday" id="birthday" placeholder="请输入出生日期" onblur="checkBirthday()">
+                <span id="birthdayInfo"></span>
+            </td>
+        </tr>
+        <tr>
+            <td>手机号：</td>
+            <td>
+                <input type="text" name="phone" id="phone" placeholder="请输入手机号">
+            </td>
+        </tr>
+        <tr>
+            <td>邮箱：</td>
+            <td>
+                <input type="text" name="email" id="email" placeholder="请输入邮箱">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: left">
+                <input type="submit" value="注    册">
+                <input type="reset" value="重置">
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

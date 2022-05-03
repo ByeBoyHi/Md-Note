@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*
+         * 字符串
+         */
+        var str = '  hello world welcome to nanjing ';
+
+        console.log(str.length);
+
+        console.log(str.charAt(0), str.charAt(3), str[0], str[str.length - 1]);
+
+        console.log(str.replace('el','xxx'));
+
+        console.log(str.indexOf('o'));
+
+        console.log(str.lastIndexOf('o'));
+
+        console.log(str.toLowerCase());
+
+        console.log(str.toUpperCase());
+
+        console.log(str.substring(1,4));
+
+        console.log(str.split(' ',3));
+
+        console.log(str.trim());
+
+
+        var s = new String('hello')
+        console.log(str);
+        console.log(s);
+        console.log(s.toUpperCase());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // var arr=new Array();
+        // arr[0] = 12;
+        // arr[1] = 9;
+        // console.log(arr.length);
+        // console.log(arr[0]);
+        // console.log(arr[4]);
+
+        // var arr=new Array('tom','jack','alice');
+        // var arr=['tom','jack','alicle','mike']; // 使用中括号定义数组
+        // console.log(arr[arr.length-1]);
+        // console.log(arr);
+
+        // 将1到100之间所有能被3整除的数字，放到数组nums中，然后输出数组
+        /*var nums=[];
+        // var index=0;
+        for(var i=1;i<=100;i++){
+            if(i%3==0){
+                // nums[index++]=i;
+                nums[nums.length]=i; // 每当向数组中添加元素时，length属性的值都会改变
+            }
+        }
+        console.log(nums);*/
+
+        var arr=['tom','jack','alicle','mike','admin','jack'];
+        // var arr = [21, 4, 34, 12, 43, 23, 15, 146];
+        console.log(arr);
+
+        // arr.sort();
+        // console.log(arr);
+
+        // arr.reverse();
+        // console.log(arr);
+        // console.log(arr.join());
+        // console.log(arr.join('-'));
+
+        // console.log(arr.indexOf('jack'));
+
+       // console.log(arr.slice(1,4));
+       // console.log(arr.slice(1));
+        console.log(arr.toString());
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

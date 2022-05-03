@@ -1,0 +1,113 @@
+﻿1、列出至少有4个员工的部门名称
+select dname 
+from dept d,emp e 
+where d.deptno=e.deptno 
+group by d.dname
+having count(e.empno)>=4;
+
+2、列出薪金比"SMITH"多的所有员工
+select * from emp where sal>(select sal from emp where ename='SMITH');
+
+3、列出所有员工的姓名以及其直接上级的姓名
+select e.ename,m.ename from emp e left join emp m on e.mgr=m.empno;
+
+select ename,(select ename from emp where empno=e.mgr)  from emp e; 
+
+4、列出受雇日期早于其直接上级的所有员工的编号、姓名、部门名称
+select e.empno,e.ename,d.dname 
+from emp e,emp m,dept d
+where e.deptno=d.deptno and e.mgr=m.empno and e.hiredate<m.hiredate;
+
+5、列出部门名称和这些部门的员工信息，同时列出那些没有员工的部门
+select d.dname,e.*
+from emp e right join dept d on e.deptno=d.deptno;
+
+6、列出所有从事"CLERK"工作的雇员姓名及其部门名称、部门人数
+select deptno,count(empno) count from emp group by deptno;
+
+select ename,d.dname,temp.count
+from emp e,dept d,(select deptno,count(empno) count from emp group by deptno) temp
+where e.deptno=d.deptno and job='CLERK' and d.deptno=temp.deptno;
+
+7、列出最低薪金大于1500的各种工作及从事此工作的全部雇员人数
+select job,count(empno)
+from emp
+group by job
+having min(sal)>1500;
+
+8、列出在部门"sales"（销售部）工作的员工的姓名，假定不知道销售部的部门编号
+select deptno from dept where dname like '%SALES%';
+
+select ename from emp where deptno=(select deptno from dept where dname like '%SALES%');
+
+9、列出薪金高于公司平均薪金的雇员姓名、所在部门名称、领导姓名、雇员的工资等级
+求出公司平均薪金
+select avg(sal) from emp;
+
+select e.ename 雇员姓名,d.dname 部门名称,m.ename 领导姓名,g.grade 雇员工资等级
+from emp e,emp m,dept d,salgrade g
+where e.sal>(select avg(sal) from emp) and e.deptno=d.deptno and e.mgr=m.empno and e.sal between g.losal and g.hisal;
+
+10、列出与"SMITH"从事相同工作的所有员工及部门名称
+select job from emp where ename='SMITH';
+
+select e.*,d.dname
+from emp e,dept d
+where e.deptno=d.deptno and job=(select job from emp where ename='SMITH');
+
+11、列出薪金等于部门30中员工的薪金的所有员工的姓名和薪金 
+select * from emp where sal in (select sal from emp where deptno=30);
+
+12、列出薪金高于部门30所有员工薪金的员工姓名、薪金及部门名称
+select e.ename,e.sal,d.dname
+from emp e,dept d 
+where e.deptno=d.deptno and e.sal >ALL (select sal from emp where deptno=30) ;  
+
+13、列出在每个部门工作的员工数量、平均工资 
+select deptno 部门编号,count(empno) 员工数量,avg(sal) 平均工资
+from emp
+group by deptno;
+
+14、列出所有员工的姓名、部门名称和工资
+select e.ename,d.dname,e.sal
+from emp e,dept d
+where e.deptno=d.deptno;
+  
+15、列出所有部门的详细信息和部门人数
+select deptno,count(empno) from emp group by deptno;
+
+-- 方式1
+select d.*,temp.count
+from dept d left join (select deptno,count(empno) count from emp group by deptno) temp on d.deptno=temp.deptno;
+
+-- 方式2
+select d.*,count(e.empno)
+from emp e right join dept d on e.deptno=d.deptno
+group by d.deptno;
+
+16、列出每种工作的最低工资以及从事此工作的雇员姓名
+select job,min(sal) min from emp group by job;
+
+select e.ename,temp.job,e.sal
+from emp e,(select job,min(sal) min from emp group by job) temp
+where e.job=temp.job and e.sal=temp.min;
+
+17、列出各个部门的经理的最低薪金
+select deptno,min(sal)
+from emp
+where job='MANAGER'
+group by deptno;
+
+18、列出所有员工的年工资，按年薪从低到高排序
+select ename,(sal+ifnull(comm,0))*12 年薪 from emp order by 年薪;
+
+19、查询雇员的领导信息，要求领导的薪水要超过3000
+select distinct m.*
+from emp e,emp m
+where e.mgr=m.empno and m.sal>3000;
+
+20、求出部门名称中，带'S'字符的部门员工的工资总和 、部门人数
+select d.dname,sum(sal),count(empno)
+from emp e,dept d
+where e.deptno=d.deptno and d.dname like '%S%'
+group by d.dname;

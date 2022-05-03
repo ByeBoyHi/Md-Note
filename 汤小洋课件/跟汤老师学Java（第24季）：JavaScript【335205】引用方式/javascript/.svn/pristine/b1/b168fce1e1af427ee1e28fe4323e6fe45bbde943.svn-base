@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // var arr=new Array();
+        // arr[0] = 12;
+        // arr[1] = 9;
+        // console.log(arr.length);
+        // console.log(arr[0]);
+        // console.log(arr[4]);
+
+        // var arr=new Array('tom','jack','alice');
+        // var arr=['tom','jack','alicle','mike']; // 使用中括号定义数组
+        // console.log(arr[arr.length-1]);
+        // console.log(arr);
+
+        // 将1到100之间所有能被3整除的数字，放到数组nums中，然后输出数组
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+1. 以首字母大写，其他字母小写的方式显示所有员工的姓名
+select concat(upper(substr(ename,1,1)),lower(substr(ename,2,length(ename))))
+from emp
+
+2. 将员工的职位用小写字母显示
+select lower(job) from emp
+
+3. 显示员工姓名超过5个字符的员工名
+select ename from emp where length(ename)>5
+
+4. 用#来填充员工职位job的结尾处，按10个字符长度输出。
+select rpad(job,10,'#') from emp
+
+5. 去除字符串'  hello world  '两边的空格，并将单词间的空格改为','逗号。
+select replace(trim('  hello world  '),' ',',')
+
+6. 以指定格式显示员工的奖金（格式：allen's comm is 300) 注：如果奖金为null显示为null，如smith 's comm is null。
+select concat(ename,'''s comm is',ifnull(comm,'null')) as from emp
+
+7. 显示在一个月为30天的情况所有员工的日薪，忽略余数
+select ceil(sal/30) from emp
+
+8. 显示员工在此公司工作了几个月
+select ename,timestampdiff(month,hiredate,now()) from emp
+
+9. 显示所有12月份入职的员工
+select * from emp where month(hiredate)=12
+
+10. 显示员工的年薪
+select ename,(sal+ifnull(comm,0))*12 from emp
+
+11. 显示所有员工的姓名、加入公司的年份和月份，并且按照年份升序排列
+select ename,year(hiredate) year,month(hiredate) month from emp order by year
+
+12. 求部门名称中带“s”字符的部门员工的工资合计、部门人数
+select d.dname,t.sum,t.count
+from dept d right join(
+	select deptno,sum(sal+ifnull(comm,0))sum,count(empno) count from emp
+) t on d.deptno=t.deptno
+where d.dname like '%s%';
+
+13. 查询任职日期超过30年的员工，显示时将月薪加10%后显示
+select ename,sal+sal*0.1 from emp where timestampdiff(year,hiredate,now())>30;

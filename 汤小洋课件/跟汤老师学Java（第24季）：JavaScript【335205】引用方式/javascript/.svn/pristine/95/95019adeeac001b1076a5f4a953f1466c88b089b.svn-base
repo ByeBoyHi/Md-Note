@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function query(){
+            /*
+             * 1.根据id获取，返回单个对象
+             */
+            /*var objDiv=document.getElementById('mydiv');
+            console.log(typeof  objDiv); // DOM对象
+            console.log(objDiv);*/
+
+            /*
+             *　2.根据name获取，返回集合
+             */
+            /*var objs = document.getElementsByName('hobby');
+            // console.log(objs);*/
+
+            /*
+             * 3.根据标签名获取，返回集合
+             */
+           /*var objs =  document.getElementsByTagName('input');
+           for(var index in objs){
+                console.log(objs[index]);
+           }*/
+
+            /*
+             * 4.根据css选择器来获取单个对象
+             */
+            // var obj = document.querySelector('p.aaa');
+            // console.log(obj);
+
+            /*
+             * 5.根据css选择器来获取多个对象
+             */
+            // var objs = document.querySelectorAll('.aaa');
+            // console.log(objs);
+
+            /*
+             * 根据已有节点来获取其他节点
+             */
+            var obj=document.getElementById('second');
+            console.log(obj.parentNode);
+            console.log(obj.previousSibling);
+            console.log(obj.nextSibling);
+            console.log(obj.parentNode.firstChild);
+            console.log(obj.parentNode.lastChild);
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="获取页面中的元素" onclick="query()">
+
+    <div id="mydiv" class="aaa">hello</div>
+    <div id="div2" class="aaa">world</div>
+    <p class="aaa">welcome</p>
+    爱好：<input type="checkbox" value="eat" name="hobby"> 吃饭
+          <input type="checkbox" value="sleep" name="hobby"> 睡觉
+          <input type="checkbox" value="doudou" name="hobby"> 打豆豆
+    姓名：<input type="text" name="username"> <br>
+
+    <ul>aaa
+        <li>tom</li>bbb
+        <li id="second">jack</li>
+        <li>mike</li>
+        <li>alice</li>ccc
+    </ul>
+</body>
+</html>

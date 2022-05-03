@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var provinces=[
+            {
+                id:1001,
+                name:'江苏省',
+                cities:[
+                    {
+                        id:1,
+                        name:'南京市'
+                    },
+                    {
+                        id:2,
+                        name:'苏州市'
+                    },
+                    {
+                        id:3,
+                        name:'扬州市'
+                    },
+                    {
+                        id:4,
+                        name:'徐州市'
+                    },
+                    {
+                        id:5,
+                        name:'常州市'
+                    }
+                ]
+            },
+            {
+                id:1002,
+                name:'山东省',
+                cities:[
+                    {
+                        id:1,
+                        name:'济南市'
+                    },
+                    {
+                        id:2,
+                        name:'青岛市'
+                    },
+                    {
+                        id:3,
+                        name:'威海市'
+                    },
+                    {
+                        id:4,
+                        name:'烟台市'
+                    },
+                    {
+                        id:5,
+                        name:'德州市'
+                    }
+                ]
+            },
+            {
+                id:1003,
+                name:'广东省',
+                cities:[
+                    {
+                        id:1,
+                        name:'广州市'
+                    },
+                    {
+                        id:2,
+                        name:'东莞市'
+                    },
+                    {
+                        id:3,
+                        name:'青远市'
+                    },
+                    {
+                        id:4,
+                        name:'佛山市'
+                    },
+                    {
+                        id:5,
+                        name:'深圳市'
+                    }
+                ]
+            }
+        ];
+
+        window.onload=function(){
+            // 初始化省份
+            for(var i in provinces){
+                var p = provinces[i];
+                var option = new Option(p.name,p.id);
+                document.getElementById('province').add(option);
+            }
+        };
+
+        function change(){
+            // 清空城市数据
+            document.getElementById('city').length=0;
+            // 获取选择的省份
+            var pid = document.getElementById('province').value;
+            if(pid==0){
+                document.getElementById('city').add(new Option('--请选择城市--'));
+                return;
+            }
+            for (var i in provinces){
+                var p =provinces[i];
+                if(p.id==pid){
+                    // 添加城市
+                    var cities = p.cities;
+                    for(var j in cities){
+                        var option=new Option(cities[j].name,cities[j].id);
+                        document.getElementById('city').add(option);
+                    }
+                    return;
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+    省份：
+    <select id="province" onchange="change()">
+        <option value="0">--请选择省份--</option>
+    </select>
+    城市：
+    <select id="city">
+        <option value="0">--请选择城市--</option>
+    </select>
+
+</body>
+</html>

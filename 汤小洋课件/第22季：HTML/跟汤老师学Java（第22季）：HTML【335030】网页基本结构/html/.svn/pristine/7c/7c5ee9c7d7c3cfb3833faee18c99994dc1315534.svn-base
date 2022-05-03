@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1px" width="500px" height="300px" align="center" bgcolor="#ccc" background="images/bg.gif" bordercolor="red" cellspacing="0" cellpadding="0">
+        <tr align="center" bgcolor="#7fffd4">
+            <td colspan="3">HTML</td>
+            <td>HTML</td>
+        </tr>
+        <tr valign="top" align="center">
+            <td>HTML</td>
+            <td valign="bottom">HTML</td>
+            <td rowspan="3" colspan="2">HTML</td>
+        </tr>
+        <tr align="right">
+            <td rowspan="2">HTML</td>
+            <td>HTML</td>
+        </tr>
+        <tr>
+            <td>HTML</td>
+        </tr>
+    </table>
+</body>
+</html>
